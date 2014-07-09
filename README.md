@@ -5,7 +5,7 @@ This is an at-home exercise that we use as part of our standard interview proces
 
 ## Instructions
 
-* Clone or Fork this repo
+* Clone this repo
 * Complete the exercise and submit either a zip of the solution or a link to a new repo
 * You may use any resources, frameworks, libraries, etc and style the markup however you like.
 
