@@ -5,10 +5,15 @@
     .module('DS')
     .controller('Recipes', Recipes);
 
-    function Recipes($scope){
+    function Recipes($scope, $http){
       var vm = this;
 
-      vm.recipes = 'hello data science';
+      vm.recipes = null;
+      vm.ingredients = [];
+
+      $http.get('../content/recipes.json').success(function(data){
+        vm.recipes = data;
+      });
     }
 
 })();
