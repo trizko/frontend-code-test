@@ -3,8 +3,12 @@
     <title>datascience.com frontend test</title>
   </head>
   <body ng-controller="Recipes as vm">
+    <select>
+      <option ng-repeat="ingredient in vm.ingredients" value="{{ingredient}}">
+        {{ingredient}}
+      </option>
+    </select>
     recipes:{{vm.recipes}}<br>
-    unique ingredients:{{vm.ingredients}}
   </body>
 
   <script type="application/javascript" src="/components/angular/angular.min.js"></script>
