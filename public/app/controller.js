@@ -5,13 +5,14 @@
     .module('DS')
     .controller('Recipes', Recipes);
 
-    function Recipes($scope, $http){
+    function Recipes($scope, $http, $localStorage){
       var vm = this;
 
       vm.recipes = null;
+      vm.$storage = $localStorage;
+      vm.$storage.selectedRecipes = vm.$storage.selectedRecipes || [];
+      vm.$storage.ingredientsNeeded = vm.$storage.ingredientsNeeded || [];
       vm.ingredients = [];
-      vm.selectedRecipes = [];
-      vm.ingredientsNeeded = [];
       vm.toggleSelection = toggleSelection;
 
       $http.get('../content/recipes.json').success(function(data){
@@ -34,14 +35,14 @@
       }
 
       function toggleSelection(recipeName){
-        var idx = vm.selectedRecipes.indexOf(recipeName);
+        var idx = vm.$storage.selectedRecipes.indexOf(recipeName);
         if(idx !== -1){
-          vm.selectedRecipes.splice(idx, 1);
+          vm.$storage.selectedRecipes.splice(idx, 1);
         } else {
-          vm.selectedRecipes.push(recipeName);
+          vm.$storage.selectedRecipes.push(recipeName);
         }
 
-        vm.ingredientsNeeded = getIngredientsForSelectedRecipes(vm.selectedRecipes);
+        vm.$storage.ingredientsNeeded = getIngredientsForSelectedRecipes(vm.$storage.selectedRecipes);
       }
 
       function getIngredientsForSelectedRecipes(recipes){

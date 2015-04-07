@@ -17,14 +17,14 @@
           type="checkbox"
           name="selectedRecipes[]"
           value="{{recipe.name}}"
-          ng-checked="vm.selection.indexOf(recipe.name) > -1"
+          ng-checked="vm.$storage.selectedRecipes.indexOf(recipe.name) > -1"
           ng-click="vm.toggleSelection(recipe.name)">
         {{recipe.name}}
       </li>
     </ul>
     <h4>Ingredients Needed:</h4>
     <ul>
-      <li ng-repeat="ingredient in vm.ingredientsNeeded | orderBy">
+      <li ng-repeat="ingredient in vm.$storage.ingredientsNeeded | orderBy">
         {{ingredient}}
       </li>
     </ul>
