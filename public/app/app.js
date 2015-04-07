@@ -3,6 +3,6 @@
 
   angular
     .module('DS', [
-      //add dependencies
+      'ngStorage'
     ]);
 })();
