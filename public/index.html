@@ -13,6 +13,12 @@
     <h4>Recipes</h4>
     <ul>
       <li ng-repeat="recipe in vm.recipes | filter:ingredientSelect | orderBy">
+        <input
+          type="checkbox"
+          name="selectedRecipes[]"
+          value="{{recipe.name}}"
+          ng-checked="vm.selection.indexOf(recipe.name) > -1"
+          ng-click="vm.toggleSelection(recipe.name)">
         {{recipe.name}}
       </li>
     </ul>
