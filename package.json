@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/trizko/frontend-code-test/issues"
   },
-  "homepage": "https://github.com/trizko/frontend-code-test"
+  "homepage": "https://github.com/trizko/frontend-code-test",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
 }
