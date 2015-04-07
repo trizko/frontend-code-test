@@ -10,7 +10,7 @@
       </option>
     </select>
     <br>
-    <h4>Recipes</h4>
+    <h4>Recipes:</h4>
     <ul>
       <li ng-repeat="recipe in vm.recipes | filter:ingredientSelect | orderBy">
         <input
@@ -20,6 +20,12 @@
           ng-checked="vm.selection.indexOf(recipe.name) > -1"
           ng-click="vm.toggleSelection(recipe.name)">
         {{recipe.name}}
+      </li>
+    </ul>
+    <h4>Ingredients Needed:</h4>
+    <ul>
+      <li ng-repeat="ingredient in vm.ingredientsNeeded | orderBy">
+        {{ingredient}}
       </li>
     </ul>
   </body>
