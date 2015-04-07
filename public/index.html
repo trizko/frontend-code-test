@@ -3,12 +3,19 @@
     <title>datascience.com frontend test</title>
   </head>
   <body ng-controller="Recipes as vm">
-    <select>
-      <option ng-repeat="ingredient in vm.ingredients" value="{{ingredient}}">
+    <h4>Filter by Ingredient:</h4>
+    <select ng-model="ingredientSelect">
+      <option ng-repeat="ingredient in vm.ingredients | orderBy" value="{{ingredient}}">
         {{ingredient}}
       </option>
     </select>
-    recipes:{{vm.recipes}}<br>
+    <br>
+    <h4>Recipes</h4>
+    <ul>
+      <li ng-repeat="recipe in vm.recipes | filter:ingredientSelect | orderBy">
+        {{recipe.name}}
+      </li>
+    </ul>
   </body>
 
   <script type="application/javascript" src="/components/angular/angular.min.js"></script>
