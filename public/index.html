@@ -1,8 +1,12 @@
-<html>
+<html ng-app="DS">
   <head>
     <title>datascience.com frontend test</title>
   </head>
-  <body>
-    hello
+  <body ng-controller="Recipes as vm">
+    {{vm.recipes}}
   </body>
+
+  <script type="application/javascript" src="/components/angular/angular.min.js"></script>
+  <script type="application/javascript" src="/app/app.js"></script>
+  <script type="application/javascript" src="/app/controller.js"></script>
 </html>
