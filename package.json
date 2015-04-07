@@ -1,0 +1,19 @@
+{
+  "name": "frontend-code-test",
+  "version": "1.0.0",
+  "description": "Test of my frontend abilities",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trizko/frontend-code-test.git"
+  },
+  "author": "Tony Rizko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trizko/frontend-code-test/issues"
+  },
+  "homepage": "https://github.com/trizko/frontend-code-test"
+}
